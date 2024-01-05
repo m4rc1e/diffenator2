@@ -3,13 +3,10 @@ on:
     tags:
       - "v*" # Push events to matching `v*` version srings. e.g. v1.0, v20.15.10
 
-name: Create and Publish Release
-
 jobs:
   build:
     name: Build distribution 📦
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
         with:
@@ -65,8 +62,8 @@ jobs:
     - build
     runs-on: ubuntu-latest
     environment:
-      name: pypi
-      url: https://pypi.org/p/<package-name>  # Replace <package-name> with your PyPI project name
+      name: test pypi
+      url: https://test.pypi.org/p/diffenator2
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
     steps:
